@@ -1,0 +1,123 @@
+/* color white is used for stats and main heading 
+   transparent white is used for stats number 
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: hsl(233deg, 47%, 7%);
+  padding: 0 2.4rem;
+}
+
+h1 {
+  color: hsl(0deg, 0%, 100%);
+  font-size: 3.6rem;
+  line-height: 1.2;
+}
+
+.paragraph {
+  color: hsla(0deg, 0%, 100%, 0.75);
+  line-height: 1.5;
+}
+
+.purple {
+  color: hsl(277deg, 64%, 61%);
+}
+
+.card {
+  max-width: 110rem;
+  border-radius: 1rem;
+  background-color: hsl(244deg, 38%, 16%);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 2rem rgba(27, 25, 56, 0.3);
+}
+.card__text {
+  padding: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.card__img {
+  background-color: hsl(277deg, 64%, 61%);
+}
+.card__img img,
+.card__img source {
+  height: 100%;
+  width: auto;
+  mix-blend-mode: multiply;
+  opacity: 0.75;
+}
+
+.stats {
+  margin-right: 3.2rem;
+  margin-top: auto;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.stats__number {
+  color: hsl(0deg, 0%, 100%);
+  margin-bottom: 0.6rem;
+  font-size: 2.4rem;
+}
+.stats__text {
+  color: hsla(0deg, 0%, 100%, 0.6);
+  font-family: "Lexend Deca", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.8px;
+}
+
+@media (max-width: 59.5em) {
+  html {
+    font-size: 56.25%;
+  }
+  .card {
+    gap: 0;
+  }
+  .stats {
+    margin-right: 0;
+  }
+}
+@media (max-width: 48.5em) {
+  .card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .card__text {
+    text-align: center;
+  }
+  .card__img {
+    grid-row: 1;
+  }
+  .card__img img,
+.card__img source {
+    width: 100%;
+  }
+}
+@media (max-width: 27.5em) {
+  h1 {
+    font-size: 3rem;
+  }
+  .card__text {
+    padding: 4rem;
+  }
+  .stats {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+}/*# sourceMappingURL=style.css.map */

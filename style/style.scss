@@ -1,0 +1,145 @@
+$color-bg--body: hsl(233, 47%, 7%);
+$color-bg--card: hsl(244, 38%, 16%);
+$color-accent: hsl(277, 64%, 61%);
+
+/* color white is used for stats and main heading 
+   transparent white is used for stats number 
+*/
+
+$color-white: hsl(0, 0%, 100%);
+$color-white--transparent: hsla(0, 0%, 100%, 0.6);
+$color-paragraph: hsla(0, 0%, 100%, 0.75);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: $color-bg--body;
+  padding: 0 2.4rem;
+}
+
+h1 {
+  color: $color-white;
+  font-size: 3.6rem;
+  line-height: 1.2;
+}
+
+.paragraph {
+  color: $color-paragraph;
+  line-height: 1.5;
+}
+
+.purple {
+  color: $color-accent;
+}
+
+.card {
+  max-width: 110rem;
+  // min-height: 44.5rem;
+  border-radius: 1rem;
+  background-color: $color-bg--card;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 2rem rgba($color-bg--card, 0.3);
+
+  &__text {
+    // grid-column: 1;
+    padding: 7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__img {
+    background-color: $color-accent;
+
+    img,
+    source {
+      height: 100%;
+      width: auto;
+      mix-blend-mode: multiply;
+      opacity: 0.75;
+    }
+  }
+}
+
+.stats {
+  margin-right: 3.2rem;
+  margin-top: auto;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+
+  &__number {
+    color: $color-white;
+    margin-bottom: 0.6rem;
+    font-size: 2.4rem;
+  }
+  &__text {
+    color: $color-white--transparent;
+    font-family: "Lexend Deca", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.8px;
+  }
+}
+
+@media (max-width: 59.5em) {
+  html {
+    font-size: 56.25%;
+  }
+  .card {
+    gap: 0;
+  }
+  .stats {
+    margin-right: 0;
+  }
+}
+@media (max-width: 48.5em) {
+  .card {
+    grid-template-columns: minmax(0, 1fr);
+
+    &__text {
+      text-align: center;
+    }
+
+    &__img {
+      grid-row: 1;
+
+      img,
+      source {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 27.5em) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .card {
+    &__text {
+      padding: 4rem;
+    }
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+}
